@@ -12,3 +12,16 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.querySelector(".gallery");
+
+  images.forEach(item => root.append(createImage(item)));
+});
+
+function createImage({url, alt}) {
+  const imageUI = document.createElement("img");
+  imageUI.src = url;
+  imageUI.alt = alt;
+  return imageUI;
+}
