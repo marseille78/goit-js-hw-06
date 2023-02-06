@@ -15,13 +15,11 @@ const images = [
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.querySelector(".gallery");
+  const imageList = images.map(createImage);
 
-  images.forEach(item => root.append(createImage(item)));
+  root.insertAdjacentHTML("afterbegin", imageList.join(""));
 });
 
 function createImage({url, alt}) {
-  const imageUI = document.createElement("img");
-  imageUI.src = url;
-  imageUI.alt = alt;
-  return imageUI;
+  return `<img src="${url}" alt="${alt}" />`
 }

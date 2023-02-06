@@ -12,4 +12,5 @@ function getRandomHexColor() {
 
 function setBgColor() {
   document.body.style.backgroundColor = getRandomHexColor();
+  document.querySelector('.color').textContent = getRandomHexColor();
 }
